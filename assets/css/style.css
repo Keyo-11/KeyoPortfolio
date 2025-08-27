@@ -911,7 +911,8 @@ body {
     flex-direction: column;
     width: 320px;
     height: 420px;
-    background: rgba(255, 255, 255, 0.08); /* semi-transparent */
+    -webkit-backdrop-filter: blur(10px); /* for Safari */
+    background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(12px); /* blur effect */
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.15);
