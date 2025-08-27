@@ -980,6 +980,7 @@ body {
     line-height: 1.4;
     text-align: justify; /* ✅ justified text */
     word-wrap: break-word;
+    margin-bottom: 5%;
 }
 
 /* User bubble */
