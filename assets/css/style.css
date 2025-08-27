@@ -971,18 +971,38 @@ body {
         }
 
 /* Messages styling */
-.user-msg {
-    text-align: right;
-    margin: 6px 0;
-    color: #00d4ff;
-    font-weight: 500;
+.user-msg,
+.bot-msg {
+    display: inline-block;
+    max-width: 75%;
+    padding: 10px 14px;
+    border-radius: 18px;
+    line-height: 1.4;
+    text-align: justify; /* ✅ justified text */
+    word-wrap: break-word;
 }
 
+/* User bubble */
+.user-msg {
+    background: #00d4ff;
+    color: #0a0f2c;
+    font-weight: 500;
+    text-align: right;
+    border-bottom-right-radius: 4px;
+    float: right;
+    clear: both;
+}
+
+/* Bot bubble */
 .bot-msg {
-    text-align: left;
-    margin: 6px 0;
-    color: #ffffff;
-    font-weight: 400;
+    background: rgba(255, 255, 255, 0.2); /* still has slight blur effect look */
+    backdrop-filter: blur(6px); /* ✅ keeps blur */
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-bottom-left-radius: 4px;
+    float: left;
+    clear: both;
 }
 
 #user-input {

@@ -171,6 +171,12 @@
 
             const fallback = "Hmm 🤔 I’m not sure about that. Try asking about my skills, projects, or contact info!";
 
+            if (messages) {
+                let botMsg = document.createElement("div");
+                botMsg.className = "bot-msg";
+                botMsg.textContent = "Hi, what can I do for you?";
+                messages.appendChild(botMsg);
+            }
             // Toggle chatbot
             if (chatbotToggle && chatbotBox && chatbotClose) {
                 chatbotToggle.addEventListener("click", () => {
