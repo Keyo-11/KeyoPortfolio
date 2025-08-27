@@ -1,5 +1,4 @@
-﻿/* Google Font */
-body {
+﻿body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background-color: #0a0f2c;
@@ -12,9 +11,9 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 10%;
-    background: rgba(255, 255, 255, 0.15); /* light grayish-white with transparency */
-    backdrop-filter: blur(10px); /* blur effect */
-    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
     position: fixed;
     width: 80%;
     top: 0;
@@ -22,15 +21,37 @@ body {
 }
 
 .logo {
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
     font-size: 22px;
     font-weight: 700;
 }
+
 
     .logo span {
         color: #6366f1;
     }
 
-/* Nav links */
+.logo-img {
+    width: 2em; 
+    height: auto; 
+    max-width: 40px; 
+    object-fit: contain;
+}
+
+
+@media (max-width: 600px) {
+    .logo {
+        font-size: 18px;
+    }
+
+    .logo-img {
+        width: 1.5em; 
+        max-width: 30px; 
+    }
+}
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -48,9 +69,8 @@ body {
             color: #6366f1;
         }
 
-/* Hamburger */
 .hamburger {
-    display: none; /* hidden on desktop */
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 25px;
@@ -66,7 +86,6 @@ body {
         border-radius: 2px;
     }
 
-/* Responsive for mobile */
 @media (max-width: 768px) {
     .navbar {
         display: flex;
@@ -79,7 +98,7 @@ body {
 
     .nav-links {
         display: none;
-        position: absolute; /* remove from flex flow */
+        position: absolute;
         top: 60px;
         right: 0;
         width: 200px;
@@ -104,7 +123,6 @@ body {
         cursor: pointer;
     }
 }
-
 
 
 
@@ -141,7 +159,7 @@ body {
         margin: 20px 10px;
         line-height: 1.6;
         color: #cbd5e1;
-        text-align: justify; /* <-- this makes the text justified */
+        text-align: justify; 
     }
 
 
@@ -192,7 +210,6 @@ body {
     gap: 5px;
 }
 
-/* Hero Image */
 .hero-img img {
     width: 300px;
     border-radius: 20px;
@@ -201,39 +218,39 @@ body {
 
 @media (max-width: 768px) {
     .hero {
-        flex-direction: column; /* stack text + image */
-        align-items: center; /* center them */
-        padding: 80px 5% 0; /* reduce padding */
-        text-align: center; /* center text */
-        gap: 30px; /* spacing between text and image */
+        flex-direction: column; 
+        align-items: center; 
+        padding: 80px 5% 0;
+        text-align: center; 
+        gap: 30px; 
     }
 
     .hero-text {
-        max-width: 100%; /* take full width */
+        max-width: 100%; 
     }
 
         .hero-text h1 {
-            font-size: 32px; /* smaller headline */
+            font-size: 32px; 
         }
 
         .hero-text .desc {
-            font-size: 16px; /* smaller description */
+            font-size: 16px;
         }
 
     .buttons {
-        justify-content: center; /* center buttons */
-        flex-wrap: wrap; /* wrap buttons if too wide */
+        justify-content: center; 
+        flex-wrap: wrap; 
     }
 
     .achievements {
-        justify-content: center; /* center achievement boxes */
-        flex-wrap: wrap; /* wrap if needed */
+        justify-content: center; 
+        flex-wrap: wrap; 
         gap: 10px;
     }
 
     .hero-img img {
-        width: 80%; /* scale image down */
-        max-width: 250px; /* prevent too big */
+        width: 80%; 
+        max-width: 250px; 
     }
 }
 
@@ -285,7 +302,7 @@ body {
 
 @media (max-width: 768px) {
     .tech-grid {
-        grid-template-columns: 1fr; /* stack cards in one column */
+        grid-template-columns: 1fr;
     }
 }
 
@@ -439,7 +456,7 @@ body {
 .projects-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2%; /* spacing between cards */
+    gap: 2%; 
     max-width: 90%;
     margin: 0 auto;
 }
@@ -461,14 +478,14 @@ body {
 .project-content {
     padding: 20px;
     flex-grow: 1;
-    text-align: left; /* ensures text is aligned left */
+    text-align: left; 
 }
 
 .project-name {
     font-size: 1.2rem;
     color: #0ea5e9;
     margin-bottom: 5px;
-    text-align: center; /* center both title and date */
+    text-align: center; 
     margin: 5px 0;
 }
 
@@ -477,7 +494,7 @@ body {
     color: #9ca3af;
     display: block;
     margin-bottom: 20px;
-    text-align: center; /* center both title and date */
+    text-align: center; 
     margin: 5px 0;
 }
 
@@ -503,12 +520,12 @@ body {
 
 .tool-bubble {
     display: inline-block;
-    background-color: #3b82f6; /* blue bubble */
+    background-color: #3b82f6;
     color: #fff;
     font-size: 0.75rem;
     padding: 4px 10px;
-    border-radius: 20px; /* fully rounded */
-    margin: 0 6px 6px 0; /* spacing between bubbles */
+    border-radius: 20px; 
+    margin: 0 6px 6px 0; 
 }
 
 @media (max-width: 980px) {
@@ -516,12 +533,12 @@ body {
         padding-bottom: 5%;
     }
     .projects-container {
-        grid-template-columns: 1fr; /* stack cards vertically */
+        grid-template-columns: 1fr; 
         gap: 1%;
     }
 
     .project-image img {
-        height: 100%; /* responsive mobile height */
+        height: 100%; 
         max-height: 100%;
     }
 
@@ -635,8 +652,8 @@ body {
 }
 
 .company-date {
-    background: #6366f1; /* bubble color */
-    color: #fff; /* text color */
+    background: #6366f1; 
+    color: #fff; 
     font-size: 0.9rem;
     padding: 6px 12px;
     border-radius: 20px; 
@@ -644,7 +661,7 @@ body {
 }
 
     .company-date:hover {
-        background: #0ea5e9; /* hover color change */
+        background: #0ea5e9; 
     }
 
 @media (max-width: 980px) {
@@ -695,7 +712,6 @@ body {
     gap: 20px;
 }
 
-/* Contact Info Cards */
 .contact-info {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
@@ -706,7 +722,7 @@ body {
 
 .info-card {
     background: #1f2937;
-    padding: 10px 10px 8px; /* smaller top/bottom padding */
+    padding: 10px 10px 8px; 
     border-radius: 12px;
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -725,38 +741,36 @@ body {
     }
 
     .info-card i {
-        font-size: 24px; /* smaller icon */
+        font-size: 24px; 
         color: #0ea5e9;
-        margin-bottom: 5px; /* space between icon and text */
+        margin-bottom: 5px; 
     }
 
     .info-card h4 {
-        margin: 2px 0; /* remove extra margin */
+        margin: 2px 0; 
         font-size: 0.95rem;
         line-height: 1.2;
         color: #fff;
     }
 
     .info-card p {
-        margin: 2px 0; /* remove extra margin */
+        margin: 2px 0; 
         font-size: 0.85rem;
         line-height: 1.2;
         color: #cbd5e1;
-        word-break: break-word; /* breaks long words if needed */
-        overflow-wrap: anywhere; /* modern fallback */
+        word-break: break-word; 
+        overflow-wrap: anywhere; 
         text-align: center;
    
     }
 
-
-/* Contact Form */
 .contact-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
     max-width: 450px;
     width: 100%;
-    font-family: 'Poppins', sans-serif; /* set same font */
+    font-family: 'Poppins', sans-serif; 
 }
 
     .contact-form input,
@@ -766,14 +780,14 @@ body {
         border: none;
         outline: none;
         font-size: 0.95rem;
-        font-family: 'Poppins', sans-serif; /* match portfolio font */
-        color: #fff; /* optional: keep text visible on dark background */
-        background: #1f2937; /* same as cards */
+        font-family: 'Poppins', sans-serif; 
+        color: #fff; 
+        background: #1f2937; 
     }
 
         .contact-form input::placeholder,
         .contact-form textarea::placeholder {
-            color: #cbd5e1; /* placeholder color */
+            color: #cbd5e1; 
         }
 
     .contact-form .btn {
@@ -782,12 +796,11 @@ body {
         border-radius: 8px;
         font-weight: 600;
         cursor: pointer;
-        font-family: 'Poppins', sans-serif; /* match font */
+        font-family: 'Poppins', sans-serif; 
         transition: 0.2s;
     }
 
 
-/* Responsive */
 @media (max-width: 980px) {
     .contact-container {
         flex-direction: column;
@@ -825,7 +838,7 @@ body {
     color: #fff;
     font-weight: 600;
     text-align: center;
-    display: none; /* hidden by default */
+    display: none; 
     z-index: 9999;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     opacity: 0;
@@ -840,11 +853,11 @@ body {
     }
 
     .toast.success {
-        background-color: #4CAF50; /* green */
+        background-color: #4CAF50; 
     }
 
     .toast.error {
-        background-color: #f44336; /* red */
+        background-color: #f44336;
     }
 
 
@@ -853,7 +866,7 @@ body {
     color: #f1f1f1;
     padding: 20px 10px;
     font-family: 'Poppins', sans-serif;
-    text-align: center; /* center everything */
+    text-align: center; 
 }
 
     .footer h3 {
@@ -876,7 +889,7 @@ body {
     margin-top: 10px;
 }
 
-/* Chatbot */
+
 /* Chatbot */
 #chatbot-container {
     position: fixed;
@@ -886,10 +899,9 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-/* Floating button with robot icon */
 #chatbot-toggle {
-    background: #00d4ff; /* bright cyan */
-    color: #0a0f2c; /* your dark bg */
+    background: #00d4ff; 
+    color: #0a0f2c; 
     border: none;
     border-radius: 50%;
     width: 55px;
@@ -905,22 +917,21 @@ body {
         background: #00aacc;
     }
 
-/* Chatbox glass effect */
 #chatbot-box {
     display: none;
     flex-direction: column;
     width: 320px;
     height: 420px;
-    -webkit-backdrop-filter: blur(10px); /* for Safari */
+    -webkit-backdrop-filter: blur(10px); 
     background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(12px); /* blur effect */
+    backdrop-filter: blur(12px); 
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
     overflow: hidden;
 }
 
-/* Header */
+
 #chatbot-header {
     background: rgba(0, 212, 255, 0.2);
     color: #00d4ff;
@@ -932,7 +943,7 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Messages */
+
 #chatbot-messages {
     flex: 1;
     padding: 10px;
@@ -941,7 +952,6 @@ body {
     color: #fff;
 }
 
-/* Input area */
 #chatbot-input {
     display: flex;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -970,7 +980,18 @@ body {
             background: #00aacc;
         }
 
-/* Messages styling */
+.bot-msg .chatbot-link {
+    color: #00ffd4; 
+    font-weight: 600;
+    text-decoration: underline;
+    transition: 0.3s;
+}
+
+    .bot-msg .chatbot-link:hover {
+        color: #00aabb; 
+        text-decoration: none; 
+    }
+
 .user-msg,
 .bot-msg {
     display: inline-block;
@@ -978,47 +999,45 @@ body {
     padding: 10px 14px;
     border-radius: 18px;
     line-height: 1.4;
-    text-align: justify; /* ✅ justified text */
+    text-align: justify;
     word-wrap: break-word;
-    margin-bottom: 5%;
+    margin-bottom: 8px;
+    hyphens: auto;
 }
 
-/* User bubble */
 .user-msg {
     background: #00d4ff;
     color: #0a0f2c;
     font-weight: 500;
-    text-align: right;
     border-bottom-right-radius: 4px;
     float: right;
     clear: both;
 }
 
-/* Bot bubble */
 .bot-msg {
-    background: rgba(255, 255, 255, 0.2); /* still has slight blur effect look */
-    backdrop-filter: blur(6px); /* ✅ keeps blur */
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(6px); 
     -webkit-backdrop-filter: blur(6px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: #fff;
     border-bottom-left-radius: 4px;
     float: left;
     clear: both;
+    text-align-last: left;
 }
 
 #user-input {
-    font-size: 16px; /* prevent mobile auto-zoom */
+    font-size: 16px; 
 }
 
 
-/* Responsive Chatbot */
 @media (max-width: 600px) {
     #chatbot-box {
         width: 85vw; 
         height: 70vh;
         bottom: 10px;
-        right: 5vw; /* push from right */
-        left: 5vw; /* add space on left side */
+        right: 5vw;
+        left: 5vw; 
     }
 
 

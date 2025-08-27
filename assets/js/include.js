@@ -1,8 +1,6 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
-    // Initialize EmailJS
     emailjs.init("R3e_UV1x1ocVDQFe0");
 
-    // Function to show toast messages
     function showToast(message, success = true) {
         let toast = document.getElementById('toast');
         if (!toast) {
@@ -19,7 +17,6 @@
         }, 3000);
     }
 
-    // Function to load HTML components
     function loadComponent(id, file, callback) {
         fetch(file)
             .then(response => {
@@ -29,10 +26,8 @@
             .then(data => {
                 document.getElementById(id).innerHTML = data;
 
-                // Execute callback if provided
                 if (callback) callback();
 
-                // Attach contact form listener if this is the contact section
                 if (id === "contact") {
                     const contactForm = document.getElementById('contactForm');
                     if (contactForm) {
@@ -55,7 +50,6 @@
     }
 
     loadComponent("header", "components/header.html", () => {
-        // Attach hamburger menu after header is loaded
         const hamburger = document.querySelector(".hamburger");
         const navLinks = document.querySelector(".nav-links");
 
@@ -64,16 +58,15 @@
                 navLinks.classList.toggle("active");
             });
 
-            // ✅ Close nav when clicking a link
+
             const navAnchors = navLinks.querySelectorAll("a");
             navAnchors.forEach(link => {
                 link.addEventListener("click", () => {
-                    navLinks.classList.remove("active"); // hide dropdown
+                    navLinks.classList.remove("active"); 
                 });
             });
         }
 
-        // ✅ Handle active nav link
         const navAnchors = document.querySelectorAll(".nav-links a");
         navAnchors.forEach(link => {
             link.addEventListener("click", function () {
@@ -83,7 +76,6 @@
         });
 
         loadComponent("chatbot", "components/chatbot.html", () => {
-            // Chatbot JS
             const chatbotToggle = document.getElementById("chatbot-toggle");
             const chatbotBox = document.getElementById("chatbot-box");
             const chatbotClose = document.getElementById("chatbot-close");
@@ -91,7 +83,6 @@
             const userInput = document.getElementById("user-input");
             const messages = document.getElementById("chatbot-messages");
 
-            // ✅ Keyword-based responses
             const botResponses = [            
                 {
                     keywords: ["academic project", "school project", "capstone", "thesis"],
@@ -177,7 +168,7 @@
                 botMsg.textContent = "Hi, what can I do for you?";
                 messages.appendChild(botMsg);
             }
-            // Toggle chatbot
+
             if (chatbotToggle && chatbotBox && chatbotClose) {
                 chatbotToggle.addEventListener("click", () => {
                     chatbotBox.style.display = "flex";
@@ -190,7 +181,6 @@
                 });
             }
 
-            // Send message
             if (sendBtn && userInput && messages) {
                 sendBtn.addEventListener("click", sendMessage);
                 userInput.addEventListener("keypress", (e) => {
@@ -201,7 +191,6 @@
                     let msg = userInput.value.trim();
                     if (!msg) return;
 
-                    // Show user message
                     let userMsg = document.createElement("div");
                     userMsg.className = "user-msg";
                     userMsg.textContent = msg;
@@ -210,7 +199,6 @@
                     userInput.value = "";
                     messages.scrollTop = messages.scrollHeight;
 
-                    // Normalize input for matching
                     const lowerMsg = msg.toLowerCase();
                     let foundResponse = null;
 
@@ -221,7 +209,6 @@
                         }
                     }
 
-                    // Bot reply
                     setTimeout(() => {
                         let botMsg = document.createElement("div");
                         botMsg.className = "bot-msg";
@@ -229,7 +216,6 @@
                         messages.appendChild(botMsg);
                         messages.scrollTop = messages.scrollHeight;
 
-                        // ✅ Handle chatbot links (close + smooth scroll)
                         const links = botMsg.querySelectorAll(".chatbot-link");
                         links.forEach(link => {
                             link.addEventListener("click", (e) => {
