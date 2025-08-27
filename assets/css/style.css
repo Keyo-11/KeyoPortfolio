@@ -283,6 +283,12 @@ body {
     margin: 0 auto; 
 }
 
+@media (max-width: 768px) {
+    .tech-grid {
+        grid-template-columns: 1fr; /* stack cards in one column */
+    }
+}
+
 
 .tech-card {
     background: #101632;
@@ -294,6 +300,7 @@ body {
     flex-direction: column;
     min-height: 160px;
     color: #fff;
+}
 }
 
 .card-title {
@@ -375,12 +382,16 @@ body {
     }
 
 @media (max-width: 980px) {
-    .tech-card,
+    .tech-card, {
+        margin: 2%;
+    }
+
     .soft-card {
-        margin: 2%; /* slightly larger spacing on mobile */
+        margin: 0 5% 0 5%;
     }
     .soft {
         margin-top: 5%;
+        margin-bottom: 5%;
     }
     .skills-section h2 {
         max-width: 90%;
@@ -389,6 +400,10 @@ body {
     .tech-grid {
         margin-left: 3%;
         margin-right: 3%;
+    }
+    .soft-grid {
+        gap: 2%;
+        max-width: 95%;
     }
 }
 
@@ -399,7 +414,7 @@ body {
 
 .projects-section {
     padding-top: 80px;
-    padding-bottom: 0;
+    padding-bottom: 2%;
     background: #0a0f2c;
     color: #fff;
     text-align: center;
