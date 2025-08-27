@@ -1052,5 +1052,39 @@
     }
 }
 
+/* Thinking cloud */
+#chatbot-think-cloud {
+    position: fixed;
+    bottom: 95px; /* slightly above toggle */
+    right: 20px; /* align with toggle */
+    max-width: 180px;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.25);
+    color: #fff;
+    border-radius: 25px;
+    backdrop-filter: blur(6px);
+    font-size: 12px;
+    font-style: italic;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    text-align: center;
+}
+
+    /* Tail pointing to toggle button */
+    #chatbot-think-cloud::after {
+        content: "";
+        position: absolute;
+        bottom: -10px; /* points downward */
+        right: 20px; /* move tail to the right */
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 10px solid rgba(255, 255, 255, 0.25);
+    }
+
+
 
 

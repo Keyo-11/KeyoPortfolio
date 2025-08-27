@@ -233,6 +233,24 @@
                     }, 500);
                 }
             }
+
+            // Show thinking cloud
+            let thinkingCloud = document.createElement("div");
+            thinkingCloud.id = "chatbot-think-cloud";
+            thinkingCloud.textContent = "💭 Something on your mind?";
+            document.body.appendChild(thinkingCloud);
+
+            let visible = false;
+            setInterval(() => {
+                visible = !visible;
+                thinkingCloud.style.opacity = visible ? 1 : 0.4;
+                thinkingCloud.style.transform = visible ? "translateY(-3px)" : "translateY(0)";
+            }, 1200);
+
+            // Hide when chatbot opens
+            chatbotToggle.addEventListener("click", () => thinkingCloud.remove());
+
+
         });
 
 
