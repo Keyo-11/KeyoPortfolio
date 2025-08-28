@@ -31,18 +31,24 @@
                 if (id === "contact") {
                     const contactForm = document.getElementById('contactForm');
                     if (contactForm) {
-                        contactForm.addEventListener('submit', function (e) {
+                        // Remove old listeners by cloning the node
+                        const newForm = contactForm.cloneNode(true);
+                        contactForm.parentNode.replaceChild(newForm, contactForm);
+
+                        // Attach fresh listener (runs only once per submit)
+                        newForm.addEventListener('submit', function (e) {
                             e.preventDefault();
-                            emailjs.sendForm('service_8kothdg', 'template_5242vac', this)
+                            emailjs.sendForm('service_8kothdg', 'template_5242vac', newForm)
                                 .then(() => {
                                     showToast("Message sent successfully!", true);
-                                    this.reset();
+                                    newForm.reset();
                                 })
                                 .catch(err => {
                                     console.error(err);
                                     showToast("Failed to send message.", false);
                                 });
-                        });
+                        }); http://localhost:8000
+
                     }
                 }
             })
