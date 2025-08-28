@@ -47,8 +47,7 @@
                                     console.error(err);
                                     showToast("Failed to send message.", false);
                                 });
-                        }); http://localhost:8000
-
+                        });
                     }
                 }
             })
